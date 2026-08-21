@@ -115,7 +115,7 @@ public class Game {
        if (checkwinner(finalmoveobject)){
            winner = currentplayer;
            gameState =GameState.ENDED;
-       }else{
+       }else if (moves.size()== board.getDimension() * board.getDimension()){
            gameState = GameState.DRAW;
        }
 
@@ -128,11 +128,31 @@ public class Game {
             if (winningStrategies1.checkWinner(board,move)){
                 return  true;
             }
-            else{
-                return  false;
-            }
+
+        }
+        return  false;
+
+    }
+
+    public void undo(){
+        if (moves.isEmpty()){
+            System.out.println(" no moves left");
+            return;
         }
 
+        Move lastmove= moves.get(moves.size()-1);
+        moves.remove(lastmove);
+
+        Cell cell =lastmove.getCell();
+        cell.setCellState(CellState.EMPTY);
+        cell.setPlayer(null);
+
+        for (WinningStrategies winningStrategies1: winningStrategies){
+            winningStrategies1.handleUndo(board,lastmove);
+        }
+
+        nextplayermoveindex-=1;
+        nextplayermoveindex = (nextplayermoveindex +players.size())%players.size();
     }
 
 

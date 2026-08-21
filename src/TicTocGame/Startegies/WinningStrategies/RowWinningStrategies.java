@@ -15,9 +15,23 @@ public class RowWinningStrategies implements WinningStrategies {
         Symbol sym = move.getPlayer().getSymbol();
 
         if (!rowcheck.containsKey(row)){
-            if
-            
+            rowcheck.put(row,new HashMap<>());
         }
+        HashMap<Symbol,Integer> rowmap = rowcheck.get(row);
+
+        if (!rowmap.containsKey(sym)){
+            rowmap.put(sym,0);
+        }
+        else{
+            rowmap.put(sym, rowmap.get(sym)+1);
+        }
+
+        if (rowmap.get(sym)==(board.getDimension())){
+            return  true;
+        }
+
+        return  false;
+
     }
 
     @Override
