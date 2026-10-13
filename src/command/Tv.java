@@ -15,4 +15,16 @@ public class Tv {
     public  void adjustchannel(int channel){
         System.out.println("the channel is adjusted to "+channel);
     }
+    public void tvOff(){
+        System.out.println("Tv Off");
+    }
+    public void Adjustvolume (String volume){
+        System.out.println("Adjust volume: "+volume);
+    }
+
+    public void ChangeChannel(String channel){
+        System.out.println("Change channel: "+channel);
+    }
+
+
 }
