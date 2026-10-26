@@ -1,13 +1,15 @@
 package command;
 
-public class TurnonComman implements Command {
+public class TvTurnOn implements Command {
 
     private Tv tv;
-    public TurnonComman(Tv tv){
+    public TvTurnOn (Tv tv){
         this.tv = tv;
     }
     @Override
     public void execute() {
-        tv.Tvon();
+        tv.tvOn();
+
     }
+
 }

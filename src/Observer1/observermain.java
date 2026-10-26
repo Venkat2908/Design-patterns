@@ -9,9 +9,10 @@ public class observermain {
         youtubechanneimpl channel = new youtubechanneimpl();
         channel.addsubscriber(alice);
         channel.addsubscriber(bob);
-        EmailNotification emailNotification= new EmailNotification("venkatraman@gmail.com");
-        channel.addsubscriber(emailNotification);
+
 
         channel.notifyvideo("the java fundamentals");
+        EmailNotification emailNotification= new EmailNotification("venkatraman@gmail.com");
+        channel.addsubscriber(emailNotification);
     }
 }
