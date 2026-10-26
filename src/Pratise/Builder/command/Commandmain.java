@@ -1,20 +1,19 @@
 package Pratise.Builder.command;
 
 public class Commandmain {
-    public  static  void main (String [] args){
-        Tv tv = new Tv();
-        TurnonComman turnon = new TurnonComman(tv);
-        Turnoffcommand turnoff = new Turnoffcommand(tv);
-        Adjustchannel adjustchannel = new Adjustchannel(tv,5);
-        AdjustVolume adjustVolume = new AdjustVolume(tv,6);
+    public static void main(String[] args) {
 
-        Remotecontrol remotecontrol = new Remotecontrol();
-        remotecontrol.setOncommand(turnon);
-        remotecontrol.setOffcommand(turnoff);
-        remotecontrol.pressonbutton();
-        remotecontrol.pressoffbutton();
-        adjustchannel.execute();
-        adjustVolume.execute();
+        Tv tv = new  Tv();
+
+        Command command = new TvTurnOn(tv);
+        Command command1 = new Adjustvolume(tv,"5");
+        RemoteControl remote = new RemoteControl(command);
+        remote.remotetvon();
+        RemoteControl remote1 = new RemoteControl(command1);
+        remote1.remotetvoff();
+
+        RemoteControl remote2 = new RemoteControl(command1,"5");
+        remote2.changevol();
 
     }
 }

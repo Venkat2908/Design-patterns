@@ -1,19 +1,18 @@
 package Pratise.Builder.Strategy;
 
 public class PaymentProcessor {
-    PaymentStrategy paymentStrategy;
 
-    public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
-        this.paymentStrategy = paymentStrategy;
+    Paymentstrategy strategy;
+    public PaymentProcessor(Paymentstrategy strategy) {
+        this.strategy = strategy;
+
     }
 
-    public PaymentProcessor(PaymentStrategy paymentStrategy){
-        this.paymentStrategy = paymentStrategy;
+    public void setStrategy(Paymentstrategy strategy) {
+        this.strategy = strategy;
     }
 
-    public  void payment(){
-        paymentStrategy.processpayment();
+    public void processPayment() {
+        strategy.processPayment();
     }
-
-
 }

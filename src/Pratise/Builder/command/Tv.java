@@ -2,17 +2,19 @@ package Pratise.Builder.command;
 
 public class Tv {
 
-    public  void Tvon(){
-        System.out.println("the tv is on");
+    public void tvOn(){
+        System.out.println("Tv On");
     }
-    public void tvoff(){
-        System.out.println("the Tv is off");
+    public void tvOff(){
+        System.out.println("Tv Off");
     }
-    public  void adjustvolume(int volume){
-        System.out.println("the volume is adjusted to "+volume);
+    public void Adjustvolume (String volume){
+        System.out.println("Adjust volume: "+volume);
     }
 
-    public  void adjustchannel(int channel){
-        System.out.println("the channel is adjusted to "+channel);
+    public void ChangeChannel(String channel){
+        System.out.println("Change channel: "+channel);
     }
+
+
 }

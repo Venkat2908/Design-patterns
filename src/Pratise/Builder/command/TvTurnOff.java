@@ -1,13 +1,13 @@
 package Pratise.Builder.command;
 
-public class TurnonComman implements Command {
+public class TvTurnOff implements Command {
 
     private Tv tv;
-    public TurnonComman(Tv tv){
+    public TvTurnOff(Tv tv) {
         this.tv = tv;
     }
     @Override
     public void execute() {
-        tv.Tvon();
+        tv.tvOff();
     }
 }
